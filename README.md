@@ -124,13 +124,16 @@ Visualization and Hypothesis test results are shown below.
 
 ### Visualization Results: 
 
-
 All these analysis are done using both Python and Power BI. Some of the visuals are shown below: 
 
 <img src="Results/Project_1.PNG"> 
+Vital People across the history of mankind have different categories. Here, the difference between positive and negative sentiments proportion is shown. Philosophers have the highest positive sentiment proportion and military leaders have highest negative proportions. 
 <img src="Results/Project_2.PNG"> 
+Here, the positive words proportion is compared article wise. It's apparent that serial killers have significant less proportion(by 3-4%) than vital people. 
 <img src="Results/Project_3.PNG">
+Here, the negative words proportion is compared article wise. It's clear that serial killers have significant high proportion(10-12%) than vital people. 
 <img src="Results/Project_4.PNG">
+Here, using boxplots, overall picture of difference in terms of positive and negative proportion is shown for both serial killers and vital people. This visual also confirms the results we acquired from other visuals and our hypothesis.
 
 Above visuals are taken from Python's matplotlib library results. 
 
