@@ -104,68 +104,45 @@ Since, the libraries used in the project are updated by the original developers 
 ## Procedure followed in the Project:
 
    * **Step 1:**
-   Data Scraping using Beautiful Soup using Genre Based Movie Links of IMDB. Scraping results are appended   	into Pre-cleaned-file.csv for further processing. 
+   Data Scraping using Beautiful Soup done separately for 500 Serial Killer Wikipedia Articles(https://en.wikipedia.org/wiki/List_of_serial_killers_by_number_of_victims) and 490 Vital People(https://en.wikipedia.org/wiki/Wikipedia:Vital_people) in links_scraping.py . Wikipedia article links for each of these type of people are scraped and stored into an excel file for further process. 
    
    * **Step 2:**
-   Data Cleaning is followed then as the data scraped is pretty dirty and needs to be molded into a suitable 	form for Data Analysis. This step takes in Pre-cleaned-file.csv and produces a cleaner Python-cleaned-	    file.csv for Data Analysis. 
-  
-   * **Step 3:**
-   Taking in Python-cleaned-file.csv, data is analysed on basis of various parameters(mentioned in the 	        Results section below). Using matplotlib, the analysis results are analysed too. Data Visualization is 	    also done using a Visualization Tool(Power BI) which is done using IMDB_Data_Power_BI_file.pbix.
+   After removing the stop words from the wikipedia articles of both Vital People and Serial Killers, sentiment analysis(using NLTK library) of the whole individual articles are done and a percentage of positive, neutral and negative sentiment words is found. This step is done in the positive_and_negative_words.py file. 
    
+   * **Step 3:**
+   The result of previous step is also visualized to test the hypothesis that serial killers have more negative sentiment words written about them when compared to Vital People. This hypothesis is testes using Kolmogorov-Smirnov Test. This step is performed in the analysis_and_visualization_of_sentiments_count.py file. 
+  
    * **Step 4:**
-   In the last step, various regression models such as Multiple Linear Regression, Lasso Regression,         	K-Nearest Neighbor and Random Forest Regression. These models are tested upon parameters like R2 Score,      Mean Squared Error and Model Score to evaluate model performance. 
+   In the last part of the project, other analysis based on the Wikipedia data are done such as comparing lengths of articles of vital people vs. serial killers and finding most dominant words in the two above mentioned categories. A wordmap is made in the other_analysis.py file.  
 
   **NOTE:** 
-All csv files mentioned in the above steps are present in the Data_Files folder. Power BI file is present in the Root Folder. 
+All csv files made and used in the above steps are present in the Data_Files folder.
 
 ## Results:
 
-Results are present in two forms: Analysis Results(Graphical) and Regression Results(Numerical). 
+Visualization and Hypothesis test results are shown below. 
 
-### Analysis Results: 
+### Visualization Results: 
 
-Cleaned Data is analyzed on the following parameters: 
-
-1. Movie title proportion as per Starting Character.
-2. Decade Wise Movie Count.
-3. Most successful Primary Actor with at least 30 movies. 
-4. Most successful Supporting Actor with at least 15 movies.
-5. Most successful Directors with at least 20 movies.
-6. Most successful Secondary Supporting Actor with at least 10 movies.
-7. Movie proportion according to different genres.
-8. User votes by consecutive years in the last century.
-9. Average runtime of movies year wise in the last century.
-10. Year Wise count of movies. 
-11. Genre Popularity over the last century.
 
 All these analysis are done using both Python and Power BI. Some of the visuals are shown below: 
 
-<img src="Results/Visual_Result_1.PNG"> 
-<img src="Results/Visual_Result_2.PNG"> 
-<img src="Results/Visual_Result_3.PNG"> 
+<img src="Results/Project_1.PNG"> 
+<img src="Results/Project_2.PNG"> 
+<img src="Results/Project_3.PNG">
+<img src="Results/Project_4.PNG">
 
-Above visuals are taken from Power BI Visualization tool which provides better clarity when compared to Python's Matplotlib library.
+Above visuals are taken from Python's matplotlib library results. 
 
-### Regression Results:
+### Hypothesis Results:
 
-Metric Scores for Models | Multiple Linear Regression | Lasso Regression | K-Nearest Neighbor | Random Forest Regression
----                      | --- | --- | --- | ---
-R2 Score                 | 44.7 | 45.3 | 43.4 | 69.6
-Mean Squared Error	 | 60 | 59.3 | 61.4 | 32.9
-Model Score 		 | 44.2 | 44.7 | 52.7 | 95.7
+Kolmogorov Smirnov Test results for the two categories based on their positive and negative sentiment words proportion are as follows:  
 
-These scores are calculated on the basis of usage of Python's scikit-learn library. 
-
-To explain the Metrics and their relevance here, the metrics are explained below:
-
-a.) R2 Score/Coefficient of Determination:  Means the % of variation of dependent variable which can be explained by independent variable. More the merrier. 
-
-b.) Mean Squared Error(MSE): MSE measures the average of error squares i.e the average squared difference between the estimated values and true value. Less the better. 
-
-c.) Model Score: Comparing the model predicted values to the actual values which we got by test data. More the number of matching values, the better
+a.) Positive Sentiment Words: P-Value = 4.122658641887565e-100, Statistic = 0.6433877551020408
+b.) Negative Sentiment Words: P-Value = 3.7347910671380056e-198, Statistic = 0.8429387755102041
 
   **NOTE:** 
-Please note that these figures and visuals have been taken on 27/8/2021. These may differ from the ones you get once you run this project again as data is scraped again and the whole procedure provides similar yet different results.  
+Please note that these figures and visuals have been taken on 26/9/2021. These may differ from the ones you get once you run this project again as data is scraped again and the whole procedure provides identical yet different results.  
 
 
 
