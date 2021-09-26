@@ -139,7 +139,12 @@ Above visuals are taken from Python's matplotlib library results.
 Kolmogorov Smirnov Test results for the two categories based on their positive and negative sentiment words proportion are as follows:  
 
 a.) Positive Sentiment Words: P-Value = 4.122658641887565e-100, Statistic = 0.6433877551020408
+
 b.) Negative Sentiment Words: P-Value = 3.7347910671380056e-198, Statistic = 0.8429387755102041
+
+To understand the above terms, one needs to know that the smaller the P-Value is, the bigger effect is between the two proprotions which are compared. Here, this shows that there is a high different between proportion of positive sentiments words between Vital People and Serial Killer and in case of Negative sentiment proportion, the difference is even double than the positive proportion. 
+
+The Kolmogorov Smirnov Statistic quantifies the distance between the empirical distribution function of the two samples. So, the higher it is the more different and far these two samples are. Hence, this statistic also validates that the sentiments of words written about Vital People and Serial Killers is very different and with a good amount of margin.  
 
   **NOTE:** 
 Please note that these figures and visuals have been taken on 26/9/2021. These may differ from the ones you get once you run this project again as data is scraped again and the whole procedure provides identical yet different results.  
