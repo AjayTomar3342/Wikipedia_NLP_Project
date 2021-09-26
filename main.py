@@ -1,0 +1,10 @@
+from links_scraping import links_scraping
+from positive_and_negative_words import words_sentiment
+from analysis_and_visualization_of_sentiments_count import visualization_sentiments
+from other_analysis import other_visualizations
+
+
+#links_scraping()
+#words_sentiment()
+#visualization_sentiments()
+other_visualizations()
